@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <title>Nail Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ПРЕДЗАГРУЗЧИК -->
+<div class="preloader" id="preloader">
+  <div class="preloader-content">
+    <div class="preloader-logo">NAIL·STUDIO</div>
+    <div class="preloader-spinner"></div>
+    <div class="preloader-text">Загружаем красоту...</div>
+  </div>
+</div>
+
+<!-- КАСТОМНЫЙ КУРСОР -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="cursorFollower"></div>
+
+<!-- ЧАСТИЦЫ -->
+<canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+  <div class="popup-box">
+    <i class="fas fa-crown" style="font-size: 3.5rem; color: var(--accent); filter: drop-shadow(0 0 25px);"></i>
+    <h2 style="font-size: 2.8rem;">-25% на первый визит</h2>
+    <p class="muted">✨ Только для тебя · успей ✨</p>
+    <div class="timer" id="timer">14:59</div>
+    <button class="btn magnetic" id="closePopupBtn" style="width:100%;"><i class="fas fa-gem"></i> Хочу скидку</button>
+    <p style="margin-top: 18px; font-size: 0.85rem;" class="muted">* бронь сегодня — подарок-сюрприз</p>
+  </div>
+</div>
+
+<!-- ЛАЙТБОКС -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightboxClose">&times;</span>
+  <img id="lightboxImg" src="" alt="">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container header-inner">
+    <div class="logo magnetic"><i class="fas fa-spa" style="margin-right: 8px;"></i> NAIL·STUDIO</div>
+    <nav class="nav">
+      <a href="#portfolio" class="magnetic">Работы</a>
+      <a href="#prices" class="magnetic">Цены</a>
+      <a href="#reviews" class="magnetic">Отзывы</a>
+      <a href="#contact" class="btn magnetic"><i class="fas fa-calendar-check"></i> Запись</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <h1 class="neon-title">Твой <span class="accent-text">маникюр</span><br>с космическим вайбом</h1>
+      <p>Премиум-материалы · уникальный дизайн · релакс-атмосфера</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn magnetic"><i class="fas fa-hand-sparkles"></i> Записаться</a>
+        <a href="#portfolio" class="btn btn-outline magnetic"><i class="fas fa-images"></i> Смотреть работы</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3 class="stat-number" data-target="6">0</h3><span class="muted">лет опыта</span>
+        </div>
+        <div class="stat-item">
+          <h3 class="stat-number" data-target="2500">0</h3><span class="muted">счастливых клиентов</span>
+        </div>
+        <div class="stat-item">
+          <h3>∞</h3><span class="muted">идей</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card" id="heroCard">
+      <img src="img/1.jpg" alt="Твой маникюр">
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <span></span><span></span><span></span>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+  <div class="container">
+    <h2 class="section-title magnetic"><i class="fas fa-camera-retro"></i> Работы · вдохновение</h2>
+    <div class="grid grid-4">
+      <div class="gallery-item fade-up" data-caption="Хром зеркальный" data-delay="0">
+        <img src="img/2.jpg" alt="Хром"><div class="gallery-overlay">Хром <small>зеркальный</small></div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Кошачий глаз" data-delay="100">
+        <img src="img/3.jpg" alt="Кошачий глаз"><div class="gallery-overlay">Кошачий глаз</div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Nude luxe" data-delay="200">
+        <img src="img/4.jpg" alt="Nude"><div class="gallery-overlay">Nude·luxe</div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Френч 2.0" data-delay="300">
+        <img src="img/5.jpg" alt="Френч"><div class="gallery-overlay">Френч 2.0</div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Акварель" data-delay="0">
+        <img src="img/6.jpg" alt="Акварель"><div class="gallery-overlay">Акварель</div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Градиент" data-delay="100">
+        <img src="img/7.jpg" alt="Градиент"><div class="gallery-overlay">Градиент</div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="3D дизайн" data-delay="200">
+        <img src="img/8.jpg" alt="3D"><div class="gallery-overlay">3D·дизайн</div>
+      </div>
+      <div class="gallery-item fade-up" data-caption="Стразы" data-delay="300">
+        <img src="img/9.jpg" alt="Стразы"><div class="gallery-overlay">Стразы</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices" class="section dark">
+  <div class="container">
+    <h2 class="section-title magnetic"><i class="fas fa-tags"></i> Прозрачные цены</h2>
+    <div class="grid grid-3">
+      <div class="card price fade-up" data-delay="0">
+        <h3>💄 Маникюр</h3><p class="muted">Классика + укрепление</p><div class="value">€25</div>
+      </div>
+      <div class="card price featured fade-up" data-delay="150">
+        <h3>✨ PRO MAX</h3><p class="muted">Гель + дизайн + уход</p><div class="value">€45</div><span class="muted">🔥 хит</span>
+      </div>
+      <div class="card price fade-up" data-delay="300">
+        <h3>🦶 Педикюр</h3><p class="muted">Smart-педикюр</p><div class="value">€35</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="section">
+  <div class="container">
+    <h2 class="section-title magnetic"><i class="fas fa-star"></i> Отзывы · любовь</h2>
+    <div class="grid grid-3">
+      <div class="review-card fade-up" data-delay="0">
+        <div class="review-header"><div class="avatar">А</div><div><strong>Алина К.</strong><div class="stars">★★★★★</div></div></div>
+        <p>“Вау! Ногти — огонь, атмосфера — кайф. Теперь только сюда.”</p>
+      </div>
+      <div class="review-card fade-up" data-delay="150">
+        <div class="review-header"><div class="avatar">М</div><div><strong>Marina</strong><div class="stars">★★★★★</div></div></div>
+        <p>“Лучший мастер, держится 4 недели! Обожаю.”</p>
+      </div>
+      <div class="review-card fade-up" data-delay="300">
+        <div class="review-header"><div class="avatar">Е</div><div><strong>Eva</strong><div class="stars">★★★★★</div></div></div>
+        <p>“Стильно, стерильно, и кофе вкусный 😍”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<section id="contact" class="cta">
+  <div class="container">
+    <h2 style="color:white;" class="magnetic">Готова к преображению?</h2>
+    <div class="form-wrapper" id="floatingForm">
+      <form class="book-form" id="bookForm">
+        <div class="input-group">
+          <input type="text" id="name" placeholder=" " required>
+          <label for="name">Имя</label>
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group">
+          <input type="tel" id="phone" placeholder=" " required>
+          <label for="phone">Телефон</label>
+          <span class="input-highlight"></span>
+        </div>
+        <div class="input-group">
+          <input type="text" id="date" placeholder=" ">
+          <label for="date">Дата / пожелания</label>
+          <span class="input-highlight"></span>
+        </div>
+        <button type="submit" class="btn magnetic" style="width:100%;"><i class="fas fa-paper-plane"></i> Отправить</button>
+        <div class="form-message" id="formMessage"></div>
+      </form>
+    </div>
+    <p class="muted" style="margin-top: 24px;"><i class="fas fa-map-pin"></i> Таллинн, Ротерманни 5  ·  📞 +372 555 0192</p>
+  </div>
+</section>
+
+<!-- КАРТА (заглушка) -->
+<section class="map-placeholder">
+  <div class="container">
+    <div class="map-overlay">
+      <i class="fas fa-map-marked-alt"></i>
+      <span>Интерактивная карта (здесь будет Google Maps)</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo"><i class="fas fa-spa"></i> NAIL·STUDIO</div>
+        <p class="muted">Премиум-маникюр и дизайн ногтей в Таллинне. Твой идеальный образ начинается здесь.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#portfolio">Работы</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#contact">Запись</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Связаться</h4>
+        <ul class="contact-info">
+          <li><i class="fas fa-phone-alt"></i> +372 555 0192</li>
+          <li><i class="fas fa-envelope"></i> hello@nailstudio.ee</li>
+          <li><i class="fas fa-map-marker-alt"></i> Ротерманни 5, Таллинн</li>
+        </ul>
+        <div class="footer-social">
+          <a href="#" class="magnetic"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="magnetic"><i class="fab fa-telegram"></i></a>
+          <a href="#" class="magnetic"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="magnetic"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Nail Studio. Все права защищены. Сделано с 💅 и неоном.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
